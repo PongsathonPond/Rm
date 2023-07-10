@@ -25,14 +25,49 @@
         <!-- Scripts -->
         @vite(['resources/js/app.js'])
         @spladeHead
+        
+        <style>
+            #loading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #3498DB;
+     }
+        .loading-text {
+            font-size: 30px;
+            color: white;
+            }
+        </style>
+        
     </head>
     <body >
+        <div id="loading">
+            <img src="{{ asset('assets/svg-loaders/three-dots.svg')}}" class="loading-text" >
+            <br>
+
+         
+            <span class="loading-text" ">กำลังโหลด...</span>
+        </div>
+
+        <div id="content" style="display: none;">
         <style>
             * {
                 font-family: 'Prompt', sans-serif;
                 font-weight: 500;
             }
+            
         </style>
         @splade
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('content').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+            }, 2000); // หน่วงเวลา 3 วินาที (3000 มิลลิวินาที)
+        });
+    </script>
     </body>
 </html>
