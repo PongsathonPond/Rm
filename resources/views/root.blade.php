@@ -46,8 +46,6 @@
         <div id="loading">
             <img src="{{ asset('assets/svg-loaders/three-dots.svg')}}" class="loading-text" >
             <br>
-
-         
             <span class="loading-text" ">กำลังโหลด...</span>
         </div>
 
@@ -66,7 +64,7 @@
             setTimeout(function () {
                 document.getElementById('content').style.display = 'block';
                 document.getElementById('loading').style.display = 'none';
-            }, 2000); // หน่วงเวลา 3 วินาที (3000 มิลลิวินาที)
+            }, 500); // หน่วงเวลา 3 วินาที (3000 มิลลิวินาที)
         });
     </script>
     </body>
